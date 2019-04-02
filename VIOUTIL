@@ -1,0 +1,21 @@
+CFLAGS = -c -ASw -G2sw 
+LOPT = $(LDBG) /align:16 /NOD
+IFLAGS =
+
+.c.obj:
+   cl $(CFLAGS) $(IFLAGS) $(OPT) $(CDBG) $(PROTO) $*.c $(PROTOH)
+
+box.obj: box.c 
+
+expbox.obj: expbox.c
+
+boxerase.obj: boxerase.c
+
+pop.obj: pop.c
+
+vioutil.dll: box.obj pop.obj expbox.obj boxerase.obj
+   link $(LOPT) pop.obj box.obj expbox.obj boxerase.obj, \
+        vioutil.dll, \
+        NUL, SLIBCE OS2, vioutil.def
+   implib vioutil.lib vioutil.def
+

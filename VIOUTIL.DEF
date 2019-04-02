@@ -1,0 +1,17 @@
+; 
+
+LIBRARY    VIOUTIL  INITINSTANCE
+
+DESCRIPTION   'Vio Utilities by AQL Systems'
+
+PROTMODE
+
+DATA NONSHARED
+
+HEAPSIZE   1024
+
+EXPORTS     _box
+            _ExpBox
+            _BoxErase
+            _pop
+

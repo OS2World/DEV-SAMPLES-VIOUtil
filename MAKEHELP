@@ -1,0 +1,6 @@
+vioutil.hlp: hlp.qhp \
+             box.c \
+             expbox.c \
+             boxerase.c \
+             pop.c
+   helpmake /t /e0 /a: /v /Ovioutil.hlp hlp.qhp *.c 
